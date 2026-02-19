@@ -36,3 +36,18 @@ To verify installations:
   npm -v
   ng version
   ```
+
+If the command ng serve does not work and shows ng: command not found, install Angular CLI globally:
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+Run the development server:
+  ```bash
+  ng serve
+  ```
+
+Open the application in your browser:
+  ```bash
+  http://localhost:4200/
+  ```
