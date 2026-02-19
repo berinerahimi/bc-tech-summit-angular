@@ -1,0 +1,29 @@
+<div class="container">
+<div *ngFor="let day of schedule" class="mb-5">
+
+  <h4 class="fw-bold mb-3 text-center">{{ day.date }}</h4>
+
+  <div class="table-wrapper mx-auto">
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr class="color">
+          <th>Time</th>
+          <th>Event</th>
+          <th>Speaker</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let event of day.events" class="color">
+          <td>{{ event.time }}</td>
+          <td>{{ event.title }}</td>
+          <td>{{ event.speaker }}</td>
+          <td>{{ event.room }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</div>

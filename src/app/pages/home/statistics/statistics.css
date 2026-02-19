@@ -1,0 +1,28 @@
+.stat-card {
+  min-height: 200px;           
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-number {
+  color: #e74c3c;               
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.stat-label{
+  font-size: 1.25rem;
+  color: #1f334a;              
+  font-weight: 500;
+}
+
+.py-5{
+    margin-bottom: 75px;
+}
+
+.fw-bold{
+font-size: 3rem;
+  color: #1f334a;              
+  font-weight: 500;
+}

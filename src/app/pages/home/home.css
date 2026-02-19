@@ -1,0 +1,118 @@
+/* Banner Style */
+.banner {
+  background-color: #0C2B4E;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  margin:0;
+width: 100%;
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.2em;
+}
+
+.btn{
+    color:#0C2B4E;
+}
+
+.overview {
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.overview h2{
+  color: #e5353b;
+  font-size: 30px;
+}
+
+.overview p{
+  margin-top: 50px;
+  font-size: 20px;
+  color: #1A3D64;
+}
+
+/* Timer */
+
+.timer {
+  text-align: center;
+  color: #e5353b;
+  font-size: 60px;
+}
+
+/* Discover cities */
+
+.discover-paragraph {
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #1A3D64;
+  text-align: center;
+}
+
+.carousel-section{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* Virtual Participation */
+
+.virtual-participation {
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.fotoja{
+  width: 600px;
+}
+.headings h2, .headings h3, .headings p {
+  margin: 10px 0;
+}
+
+.headings h2 {
+  font-size: 2.5em;
+  color: #e74c3c;
+}
+
+.headings h3 {
+  font-size: 2em;
+  color: #34495e;
+}
+
+.headings p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Session Style */
+.card-section{
+  margin-bottom: 100px;
+}
+
+/* Included on the Ticket */
+.benefits-list {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  line-height: 1.8;
+  text-align: center;
+  list-style-type: none;
+  color: #0C2B4E;
+  font-size:20px;
+}
+
+.text-list{
+  text-align: center;
+  color: #e5353b;
+  font-size: 30px;
+}
+
+.text-lista{
+  text-align: center;
+  color: #0C2B4E;
+}

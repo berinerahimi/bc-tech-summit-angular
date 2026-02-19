@@ -1,0 +1,23 @@
+<div class="container my-5">
+
+  <div class="row justify-content-center g-4">
+
+    <div
+      class="col-12 col-md-6 col-lg-3"
+      *ngFor="let speaker of speakers"
+    >
+      <div class="speaker-card p-3 h-100">
+
+        <h5 class="fw-bold mb-1">{{ speaker.name }}</h5>
+        <p class="text-danger fw-semibold mb-2">{{ speaker.title }}</p>
+
+        <p class="description">
+          {{ speaker.description }}
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+.login-box {
+  width: 100%;
+  max-width: 450px;
+  margin-top: 70px;
+}
+
+form input.form-control {
+  max-width: 450px;
+}
+
+.container {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: flex-start; 
+}

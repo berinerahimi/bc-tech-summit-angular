@@ -1,0 +1,72 @@
+<!-- HEADER / NAVBAR -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<nav class="navbar navbar-expand-lg my-navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">BC Tech Summit</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/munich" routerLinkActive="active">
+            Munich
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/prishtina" routerLinkActive="active">
+            Prishtina
+          </a>
+        </li>
+
+        <!-- Submit Paper, visible only when logged in-->
+        <li class="nav-item" *ngIf="firebase.currentUser()">
+          <a class="nav-link" routerLink="/submit-paper" routerLinkActive="active">
+            Submit Paper
+          </a>
+        </li>
+
+        <!-- Tickets, visible only when logged in -->
+        <li class="nav-item" *ngIf="firebase.currentUser()">
+          <a class="nav-link" routerLink="/tickets" routerLinkActive="active">
+          Tickets
+            </a>
+        </li>
+
+        <!-- Login, only visible when not logged in -->
+        <li class="nav-item" *ngIf="!firebase.currentUser()">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">
+            Login
+          </a>
+        </li>
+
+        <!-- Logout, only visible when logged in -->
+        <li class="nav-item" *ngIf="firebase.currentUser()">
+          <a class="nav-link" (click)="logout()" style="cursor: pointer;">
+          Logout
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Maincontent -->
+<main class="mb-4">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer text-light py-3 mt-auto">
+  <div class="container text-center">
+    <small>&copy; 2025 BC Tech Summit</small>
+  </div>
+</footer>

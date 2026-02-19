@@ -1,0 +1,9 @@
+.speaker-card {
+  border: 2px solid #d3d3d3;
+  border-radius: 18px;
+  background: white;
+}
+
+.description {
+  color: #1A3D64;
+}

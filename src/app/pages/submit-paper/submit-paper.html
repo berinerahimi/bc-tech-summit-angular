@@ -1,0 +1,138 @@
+<div class="container py-4">
+  <h1>Submit Paper</h1>
+  <p class="text-muted">
+    Please fill in the form below to submit your paper to the BC Tech Summit.
+  </p>
+
+  <form #paperForm="ngForm" (ngSubmit)="onSubmit(paperForm)" novalidate>
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Paper Title *</label>
+      <input
+        id="title"
+        name="title"
+        type="text"
+        class="form-control"
+        [(ngModel)]="paper.title"
+        required
+        minlength="5"
+        #title="ngModel">
+      <div class="text-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
+        <small *ngIf="title.errors?.['required']">Title is required.</small>
+        <small *ngIf="title.errors?.['minlength']">Title must be at least 5 characters.</small>
+      </div>
+    </div>
+
+    <!-- Author -->
+    <div class="mb-3">
+      <label for="author" class="form-label">Author *</label>
+      <input
+        id="author"
+        name="author"
+        type="text"
+        class="form-control"
+        [(ngModel)]="paper.author"
+        required
+        minlength="3"
+        #author="ngModel">
+      <div class="text-danger" *ngIf="author.invalid && (author.dirty || author.touched)">
+        <small *ngIf="author.errors?.['required']">Author name is required.</small>
+        <small *ngIf="author.errors?.['minlength']">Name must be at least 3 characters.</small>
+      </div>
+    </div>
+
+    <!-- URL -->
+
+    <div class="mb-3">
+      <label for="url" class="form-label">Paper URL *</label>
+
+      <input
+        type="url"
+        id="url"
+        name="url"
+        class="form-control"
+        required
+        pattern="https?://.+"
+        [(ngModel)]="paper.url"
+        #url="ngModel" />
+
+      <div
+        class="text-danger mt-1"
+        *ngIf="url.invalid && (url.touched || paperForm.submitted)">
+          Please enter a valid URL starting with http:// or https://
+      </div>
+    </div>
+
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Contact E-mail *</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        class="form-control"
+        [(ngModel)]="paper.email"
+        required
+        email
+        #email="ngModel">
+      <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <small *ngIf="email.errors?.['required']">E-mail is required.</small>
+        <small *ngIf="email.errors?.['email']">Please enter a valid e-mail address.</small>
+      </div>
+    </div>
+
+    <!-- City -->
+    <div class="mb-3">
+      <label for="city" class="form-label">Conference City *</label>
+      <select
+        id="city"
+        name="city"
+        class="form-select"
+        [(ngModel)]="paper.city"
+        required
+        #city="ngModel">
+        <option value="" disabled>Select a city</option>
+        <option value="Munich">Munich</option>
+        <option value="Prishtina">Prishtina</option>
+        <option value="Both">Both (Munich &amp; Prishtina)</option>
+      </select>
+      <div class="text-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
+        <small>City selection is required.</small>
+      </div>
+    </div>
+
+    <!-- Abstract -->
+    <div class="mb-3">
+      <label for="abstract" class="form-label">Abstract *</label>
+      <textarea
+        id="abstract"
+        name="abstract"
+        rows="5"
+        class="form-control"
+        [(ngModel)]="paper.abstract"
+        required
+        minlength="30"
+        #abstract="ngModel"></textarea>
+      <div class="text-danger" *ngIf="abstract.invalid && (abstract.dirty || abstract.touched)">
+        <small *ngIf="abstract.errors?.['required']">Abstract is required.</small>
+        <small *ngIf="abstract.errors?.['minlength']">
+          Abstract must be at least 30 characters.
+        </small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="paperForm.invalid || isSubmitting">
+      {{ isSubmitting ? 'Submitting...' : 'Submit Paper' }}
+    </button>
+  </form>
+
+  <!-- Status / Feedback -->
+  <p class="mt-3" *ngIf="submitStatus">
+    {{ submitStatus }}
+  </p>
+</div>
