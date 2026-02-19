@@ -18,3 +18,21 @@ The project was developed as part of my academic work as a Computer Science stud
 - Responsive user interface
 - Modular and scalable project structure
 - Clean separation of concerns
+
+## Installation & Setup
+Before running the project locally, ensure the following are installed:
+-Node.js (version 16 or higher recommended)
+-npm (installed with Node.js)
+-Angular CLI
+
+If Angular CLI is not installed globally, install it using:
+  ```bash
+  npm install -g @angular/cli
+```
+
+To verify installations:
+  ```bash
+  node -v
+  npm -v
+  ng version
+  ```
